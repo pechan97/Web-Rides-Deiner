@@ -1,0 +1,105 @@
+ #map {
+        width: 450px;
+        height: 450px;
+        margin: auto;
+      }
+#cuadro
+{
+    padding:  50px;
+    background-color: black;
+    opacity: 0.8;
+    border: 2px solid;
+    height: 204px;
+}
+#access 
+{
+    padding:  20px;
+    border-radius: 20px 20px 20px 20px;
+    -moz-border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+    border: 4px solid #000000;
+    background-color: white;
+    text-align: center;
+    margin: auto;
+    opacity: 0.8;
+    margin-top: 76px;
+}
+#map1
+{
+	padding: 2px;
+    width :30px; 
+    height: 30px;
+}
+#map2
+{
+	padding: 2px;
+	width :30px; 
+	height: 30px;
+}
+.container
+{
+    text-align: center;
+    margin:auto;
+}
+body
+{
+    background-image: url(../img/accesImg.png);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+table 
+{    
+    font-family: "Lucida Sans Unicode", "Lucida Grande",  Sans-Serif;
+    font-size: 14px;    
+    width: 480px; 
+    text-align: left;  
+    border-collapse: collapse;  
+    border: 1px solid;
+}
+th 
+{         
+	font-weight: normal;     
+	padding: 8px;     
+	background: #A4A4A4;   
+    border-bottom: 1px solid #fff; 
+    color: #039; 
+    border: 1px solid;
+}
+td 
+{    
+    padding: 8px;    
+    background: #e8edff;    
+    border-bottom: 1px solid #fff;
+    color: #669;   
+    border-top: 1px solid transparent; 
+    border: 1px solid;
+}
+tr:hover td 
+{ 
+    background: #d0dafd; 
+    color: #339; 
+}
+.rwd 
+{
+    width:100%;
+    overflow:auto;
+}
+.rwd table.rwd_auto 
+{
+    width:auto;
+    min-width:100%;
+}
+#table
+{
+    padding:  80px;
+    border-radius: 20px 20px 20px 20px;
+    -moz-border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+    border: 2px solid #000000;
+    background-color: white;
+    text-align: center;
+    margin: auto;
+}

@@ -1,0 +1,39 @@
+#login 
+{
+padding-top: 60px;
+width: 350px;
+height: 355px;
+border-radius: 20px 20px 20px 20px;
+-moz-border-radius: 20px 20px 20px 20px;
+-webkit-border-radius: 20px 20px 20px 20px;
+border: 7px double rgba(203, 227, 248, 0.31);;
+background-color: white;
+text-align: center;
+ margin: auto;
+ opacity: 0.8;
+ color: rgba(0, 0, 0, 0.64);
+ margin-top: 100px;
+}
+.container
+{
+text-align: center;
+margin:auto;
+}
+body
+{
+    background-image: url(../img/imagenfondo1.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+#mesage{
+	font-size: 15px;
+	color: red;
+}
+.usuario{
+ background-color: white;
+}
+.tamañoabajo{
+	margin-bottom: 15px;
+}

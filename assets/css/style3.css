@@ -1,0 +1,32 @@
+#caja
+{
+border-radius: 20px 20px 20px 20px;
+-moz-border-radius: 20px 20px 20px 20px;
+-webkit-border-radius: 20px 20px 20px 20px;
+border: 3px solid #000000;
+background-color: white;
+opacity: 0.9;
+height: 590px;
+width: 500px;
+margin:auto;
+text-align: center;
+margin-top: 0px;
+}
+.container
+{
+text-align: center;
+margin:auto;
+}
+body
+{
+    background-image: url(../img/imagenfondo1.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    
+}
+#mesage{
+	font-size: 15px;
+	color: red;
+}
