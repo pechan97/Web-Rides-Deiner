@@ -24,12 +24,12 @@
       </div>
       <div class="form-group">
         <label for="exampleInputFile">Not an user?</label>
-        <a class="bt btn-link" href="registro.html">Register Here</a>
+        <a class="bt btn-link" href="<?php echo base_url().'Register/show_register'?>">Register Here</a>
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1" id="mesage"><?php echo $error;?></label>
       </div>
-      <button id="etiquetaA" type="submit" class="btn btn-success"  name="register">
+      <button id="rides" type="submit" class="btn btn-success"  name="register">
       Login
    </button>
     </form>

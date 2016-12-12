@@ -8,7 +8,11 @@ class Dashboard extends CI_Controller
     {
         $error = $this->session->flashdata('error');
         $data['error'] = $error;
-        $this->load->view('Dashboard/dashboard.php', $data);
+        $this->load->model("Dashboard_model");
+        $user = $_SESSION['user'];
+        $data['name'] = $this->Dashboard_model->get_name($user['id']);
+        $data['ride'] = $this->Dashboard_model->loadData($user['id']);
+        $this->load->view('Dashboard/dashboard', $data);
     }
    
 }

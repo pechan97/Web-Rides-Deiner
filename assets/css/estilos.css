@@ -8,6 +8,15 @@ table
 	border-style: all;
 	border: 1px solid;
 }
+#etiquetaA{
+	font-size: 20px;
+	margin-top:30px;
+}
+#rides{
+	font-size: 20px;
+	margin-top:10px;
+}
+
 th 
 {         
 	font-weight: normal;     
@@ -43,6 +52,7 @@ tr:hover td
 
 body 
 {
+    background-image: url(../img/imagenfondo1.jpg);
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-size: 100% 100%;
@@ -126,7 +136,7 @@ header nav ul li {
 }
 
 header nav ul li:hover {
-	background:#E6344A;
+	background:rgba(99, 181, 195, 0.77);
 }
 
 header nav ul li a {

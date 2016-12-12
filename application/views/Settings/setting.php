@@ -1,105 +1,92 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Settings</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/material.css" media="screen" title="no title" charset="utf-8">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css" >
-  </head>
-  <body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <main class="demo-main mdl-layout__content">
-    <div class="demo-container mdl-grid">
-    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
-    <div class="cont demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
-        <header class="mdl-layout__header">
-        <div class="mdl-layout__header-row" style="padding-left: 2%;">
-        <div class="mdl-grid aline">
-  <div class="mdl-cell mdl-cell--4-col tamano">
-  <a href="<?php echo base_url()."Mapa/show_mapa"?>" id="span" class="material-icons arrow">arrow_back</a>
-  </div>
-  <div class="mdl-cell mdl-cell--4-col titlemap tamano">
-    <span class="mdl-layout-title">Settings</span>
-  </div>
-  <div class="mdl-cell mdl-cell--4-col tamano">
-  <i class="material-icons line2">settings</i>
-  </div>
-</div>
-   </div>
-        </header>
-    <div class="container">
-    <div class="form-container">
-    <form class="" action="" method="post">
-    <div class="prinset">
-    <div class="lineone lineall">
+<head>
+  <meta charset="UTF-8">
+  <title>Settings</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/estilos.css">
+      <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/newstyle.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/font.css">
+ <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/boostrap.css">
+</head>
+<body>
+ <script> 
+      function solonumeros(e)
+{
+   var keynum = window.event ? window.event.keyCode : e.which;
+   if ((keynum == 8) || (keynum == 46))
+        return true;
+    return /\d/.test(String.fromCharCode(keynum));
+}
+      </script> 
+  <header>
+    <div class="menu_bar">
+      <a href="#" class="bt-menu"><span class="icon-list-numbered"></span>Menú</a>
     </div>
-    <div>
-    <a class="sinli" href="<?php echo base_url()."EditProfile/show_editprofile"?>">
-    <div class="mdl-grid aline">
-  <div class="mdl-cell mdl-cell--2-col mitadico">
-  <i class="material-icons color">mode_edit</i>
-  </div>
-  <div class="mdl-cell mdl-cell--2-col mitad">
-    <span class="mdl-layout-title titEdit">Edit Profile</span>
-  </div>
-  </div>
-  </a>
-    </div>
-    <div class="linetwo lineall">
-    </div>
-    <div class="linethree lineall">
-    </div>
-    <a class="sinli" href="<?php echo base_url()."Login/logout"?>">
-    <div class="mdl-grid aline">
-  <div class="mdl-cell mdl-cell--2-col mitadico">
-  <i class="material-icons color">exit_to_app</i>
-  </div>
-  <div class="mdl-cell mdl-cell--2-col mitad">
-    <span class="mdl-layout-title titEdit">Logout</span>
-  </div>
-  </div>
-  </a>
-      <div class="linetwo lineall">
-    </div>
-    <div class="linethree lineall">
-    </div>
-      <div class="mdl-grid aline">
-  <div class="mdl-cell mdl-cell--2-col mitadico">
-  <i class="material-icons color">favorite</i>
-  </div>
-  <div class="mdl-cell mdl-cell--2-col mitad">
-    <span class="mdl-layout-title titEdit">Favorites</span>
-  </div>
-  </div>
-      <div class="linetwo lineall">
-    </div>
-    <div class="mdl-grid alinedel">
-  <a class="sinli" href="<?php echo base_url()."Delete/deleteaccount"?>">
-  <div class="mdl-cell mdl-cell--2-col deleteico">
-  <i class="material-icons icodel">delete</i>
-  </div>
-  </a>
-  <a class="sinli" href="<?php echo base_url()."Delete/deleteaccount"?>">
-  <div class="mdl-cell mdl-cell--2-col delete">
-    <span class="mdl-layout-title titEdit">Delete Account</span>
-  </div>
-  </a>
-  </div>
-    </div>
-    </div>
-    </form>
-</div>
-</div>
-
+    <nav>
+      <ul>
+        <li><a href="<?php echo base_url().'Dashboard/show_dashboard'?>"><span class="icon-newspaper"></span>Dashboard</a></li>
+        <li><a href="<?php echo base_url().'Rides/show_rides'?>"><span class="icon-truck"></span>Rides</a></li>
+        <li><a href="<?php echo base_url().'Settings/show_settings'?>""><span class="icon-cogs"></span>Settings</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <div id="caja"> 
+      <div class="row">
+        <div class="col-xs-12 col-md-4">
+          <label for="exampleTxt">Dashboard > Settings</label>
+        </div>
       </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-12">
+        <?php foreach ($name as $user): ?>
+          <label id="bienvenido">Welcome: <?php echo $user->first_name?></label>
+          <?php endforeach; ?>
+          <input type=image src="<?php echo base_url(); ?>assets/img/perfil.jpg" width="25" height="50">
+        </div>
+      </div>
+      <form class="form-horizontal" action="<?php echo base_url().'Settings/updatePersonalData'?>" method="post">
+       <?php foreach ($single_user as $user): ?>
+      <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">First Name</label>
+    <div class="col-sm-10">
+      <input type="text" name="firstname" class="form-control" id="fullName" placeholder="First Name" value="<?php echo $user->first_name;?>">
     </div>
-    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.js"></script>
-      <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/knockout.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/momentjs.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/material.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/query.js"></script>
-
-  </body>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Last Name</label>
+    <div class="col-sm-10">
+      <input type="text" name="lastname" class="form-control" id="speed" placeholder="Last Name" value="<?php echo $user->last_name;?>">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Phone</label>
+    <div class="col-sm-10">
+      <input type="text" name="phone" class="form-control" id="speed" placeholder="Phone" value="<?php echo $user->phone;?>" onkeypress="return solonumeros(event);">
+    </div>
+  </div>
+    <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Speed Average</label>
+    <div class="col-sm-10">
+      <input type="text" name="speed" class="form-control" id="speed" placeholder="Speed" value="<?php echo $user->speed;?>">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">About me</label>
+    <div class="col-sm-10">
+        <input type="text" name="about" class="form-control" id="speed" placeholder="About You" value="<?php echo $user->about;?>">
+    </div>
+    <?php endforeach; ?>
+    <div class="form-group">
+        <label for="exampleInputEmail1" id="mesage"><?php echo $error;?></label>
+      </div>
+    <button id="etiquetaA" type="submit" class="btn btn-success"  name="register">
+      Save
+   </button>
+  </div>
+</form>
+    </div>
+  </div>
+</body>
 </html>

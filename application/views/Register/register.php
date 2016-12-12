@@ -50,7 +50,7 @@
       <div class="form-group">
         <label for="exampleInputEmail1" id="mesage"><?php echo $error;?></label>
       </div>
-      <button id="etiquetaA" type="submit" class="btn btn-success"  name="register">
+      <button id="rides" type="submit" class="btn btn-success"  name="register">
       Register
    </button>
     </form>
