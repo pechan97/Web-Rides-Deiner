@@ -47,7 +47,9 @@
               </thead>
               <?php foreach ($list as $key): ?>
             <tr class="success">
-            <td><?php echo $key->name_ride?></td>
+            <?php foreach ($use as $value): ?>
+            <td><?php echo $value->username?></td>
+            <?php endforeach ?>           
             <td><?php echo $key->start?></td>
             <td><?php echo $key->end?></td>
             </tr>
@@ -59,7 +61,7 @@
       <form>
         <div class="form-group">
           <label for="exampleInputFile">Already an user?</label>
-          <a class="bt btn-link" href="proyecto.html">Login Here</a>
+          <a class="bt btn-link" href="<?php echo base_url().'Login/'?>">Login Here</a>
         </div>
       </form>
     </div>

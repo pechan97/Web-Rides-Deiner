@@ -18,24 +18,24 @@ class Rides_model extends CI_Model
       $result = $query->result();
       return $result;
     }
-    public function updateRide($id,$data)
-    {
-       $this->db->where('id', $id);
-       $this->db->update('rides', $data);
-    }
     public function deleteride($id){
       $this->db->where('id', $id);
       $this->db->delete('rides');
     }
-    /*public function mostrar($start,$end)
+    public function getuser($id)
     {
-       $query = $this->db->get_where('rides',array('start' =>$start,'end' => $end));
+       $query = $this->db->get_where('user',array('id' =>$id));
        return $query->result();
-    }*/
+    }
     public function mostrar($start,$end)
     {
       $query = $this->db->get_where('rides',array('start' =>$start,'end' => $end));
        return $query->result();
+    }
+    public function updateRide($id,$data)
+    {
+       $this->db->where('id', $id);
+       $this->db->update('rides', $data);
     }
 }
 

@@ -31,7 +31,7 @@
 		<div id="caja"> 
 			<div class="row">
 				<div class="col-xs-12 col-md-4">
-					<label for="exampleTxt">Dashboard > Rides > Add</label>
+					<label for="exampleTxt">Dashboard >Edit Rides > Add</label>
 				</div>
 			</div>
 			<div class="row">
@@ -42,13 +42,13 @@
 					<input id="img" type=image src="<?php echo base_url(); ?>assets/img/perfil.jpg">
 				</div>
 			</div>
-			<form class="form-horizontal" action="<?php echo base_url().'EditRide/update_ride'?>" method="post">
+			<form class="form-horizontal" action="<?php echo base_url().'EditRides/updateRide'?>" method="post">
 				<div class="form-group">
 					<label for="exampleInputFile" class="col-sm-2 control-label">Ride Name</label>
 					<div class="col-sm-6">
 					<?php foreach ($rides as $ride): ?>
 						<input name="ridename" type="text" class="form-control" id="rideName" placeholder="Ride Name" value="<?php echo $ride->name_ride?>">
-						
+						<input name="id" type="text" id="trans" value="<?php echo $ride->id?>">
 					</div>
 				</div>
 				<div class="form-group">

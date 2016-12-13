@@ -23,10 +23,13 @@
         <input id="contraseña" type="password" class="form-control" placeholder="Password" name="password">
       </div>
       <div class="form-group">
-        <label for="exampleInputFile">Not an user?</label>
+        <label for="exampleInputFile"></label>
         <a class="bt btn-link" href="<?php echo base_url().'Register/show_register'?>">Register Here</a>
       </div>
       <div class="form-group">
+          <a class="bt btn-link" href="<?php echo base_url().'Acceso/show_acceso'?>">Public access Here</a>
+        </div>
+      <div class="">
         <label for="exampleInputEmail1" id="mesage"><?php echo $error;?></label>
       </div>
       <button id="rides" type="submit" class="btn btn-success"  name="register">

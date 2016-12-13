@@ -14,7 +14,7 @@ class Acceso extends CI_Controller
     		$start="";
     		$end="";          
     	}  	
-    	 $data['list'] = $this->Rides_model->mostrar($start,$end);
+    	$data['list'] = $this->Rides_model->mostrar($start,$end);
         $error = $this->session->flashdata('error');
         $data['error'] = $error;
         $this->load->view('Acceso/acceso', $data);
