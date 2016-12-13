@@ -22,6 +22,13 @@ class Dashboard_model extends CI_Model
       $result = $query->result();
       return $result; 
     }
+    public function get_rides($id){      
+      $this->db->select('id');
+      $this->db->from('rides');
+      $this->db->where('id_user', $id);
+      $query = $this->db->get();
+      return $query->result_array();
+    }
 }
 
 ?>

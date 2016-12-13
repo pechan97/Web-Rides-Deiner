@@ -29,20 +29,21 @@ class Settings extends CI_Controller
     {
         $user = $_SESSION['user'];
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('first_name', 'Name', 'trim|required');
-        $this->form_validation->set_rules('last_name', 'Last Name', 'trim|required');
+        $this->form_validation->set_rules('firstname', 'Name', 'trim|required');
+        $this->form_validation->set_rules('lastname', 'Last Name', 'trim|required');
         $this->form_validation->set_rules('phone', 'Phone', 'trim|required');
         $this->form_validation->set_rules('speed', 'Speed', 'trim|required');
         $this->form_validation->set_rules('about', 'About You', 'trim|required'); 
         if ($this->form_validation->run()) {      
        $data = array(
        'first_name' => $this->input->post('firstname'),
-       'last_name' => $this->input->post('last_nameame'),
+       'last_name' => $this->input->post('lastname'),
        'phone' => $this->input->post('phone'),
        'speed' => $this->input->post('speed'),
        'about' => $this->input->post('about')
        );
        $this->Settings_model->updatePersonalData($user['id'],$data);
+       redirect('Dashboard/show_dashboard');
      } else {
         $this->session->set_flashdata('error', 'All Fields are required');
         redirect('Settings/show_settings');

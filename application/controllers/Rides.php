@@ -27,8 +27,11 @@ class Rides extends CI_Controller
         $savedays="";
         if(!empty($_POST['pregunta'])){
           foreach($_POST['pregunta'] as $selected){
-          $savedays.="-".$selected;
+          $savedays.=$selected."-";
           }
+        } else {
+          $this->session->set_flashdata('error', 'Please choose the days');
+          redirect('Rides/show_rides');
         }
           if ($this->form_validation->run()) {
              $user = $_SESSION['user'];

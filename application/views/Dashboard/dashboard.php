@@ -29,7 +29,7 @@
   </header>
   <div class="container">
     <div id="caja"> 
-      <form action="<?php echo base_url().'Dashboard/loadData'?>" method="post">
+      <form  action="<?php echo base_url().'Dashboard/get_rides'?>" method="post">
         <div class="row">
           <div class="col-xs-8 col-md-4">
             <label for="exampleTxt">Dashboard</label>
@@ -53,7 +53,6 @@
             <label for="exampleInput">Your current list of Rides</label>
           </div>
         </div>
-      </form>
       <div class="rwd" >
         <div class="rwd_auto">
           <table id="tabla">
@@ -70,13 +69,14 @@
             <td><?php echo $rides->name_ride?></td>
             <td><?php echo $rides->start?></td>
             <td><?php echo $rides->end?></td>
-            <td><a class="a" href="">Edit</a> - <a class="a" href="">Delete</a></td>
+            <td><a href="<?php echo base_url().'EditRides/show_rides/'.$rides->id?>">Edit</a> - <a href="">Delete</a></td>
             </tr>
             <?php endforeach; ?>
           </table>
         </div>
       </div>
       <a href="<?php echo base_url().'Rides/show_rides'?>" class="col-xs-1 col-md-1 btn btn-primary">+</a>
+       </form>
     </div>
   </div> 
 </body>

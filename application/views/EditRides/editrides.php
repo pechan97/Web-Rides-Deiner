@@ -9,11 +9,6 @@
  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/boostrap.css">
 </head>
 <body>
-      <?php
-      if(isset($_SESSION['rides'])){
-           $rides = $_SESSION['rides'];
-      }
-       ?>
 	<header>
 		<div class="menu_bar">
 			<a href="#" class="bt-menu"><span class="icon-list-numbered"></span>Menú</a>
@@ -45,25 +40,27 @@
 				<div class="form-group">
 					<label for="exampleInputFile" class="col-sm-2 control-label">Ride Name</label>
 					<div class="col-sm-6">
-						<input name="ridename" type="text" class="form-control" id="rideName" placeholder="Ride Name">
+					<?php foreach ($rides as $ride): ?>
+						<input name="ridename" type="text" class="form-control" id="rideName" placeholder="Ride Name" value="<?php echo $ride->name_ride?>">
+						
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="exampleInputFile" class="col-sm-2 control-label">Start From</label>
 					<div class="col-sm-6">
-						<input name="start" type="text" class="form-control" id="start" placeholder="Start">
+						<input name="start" type="text" class="form-control" id="start" placeholder="Start" value="<?php echo $ride->start?>">
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="exampleInputFile" class="col-sm-2 control-label">End</label>
 					<div class="col-sm-6">
-						<input name="end" type="text" class="form-control" id="end" placeholder="End">
+						<input name="end" type="text" class="form-control" id="end" placeholder="End" value="<?php echo $ride->end?>">
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="exampleInputFile" class="col-sm-2 control-label">Description</label>
 					<div class="col-sm-6">
-						<input name="description" class="form-control" id="descrip" placeholder="Add here the description of the ride">
+						<input name="description" class="form-control" id="descrip" placeholder="Add here the description of the ride" value="<?php echo $ride->description?>">
 					</div>
 				</div>
 				<div class="row">
@@ -81,10 +78,10 @@
 				</div>
 				<div class="row">
 					<div class="col-xs-6 col-md-6">
-						<input name="timeone"  id="departure" type="text" class="form-control" placeholder="7:00AM"> 
+						<input name="timeone"  id="departure" type="text" class="form-control" placeholder="7:00AM" value="<?php echo $ride->timeone?>"> 
 					</div>
 					<div class="col-xs-6 col-md-6">
-						<input name="timetwo" id="estimatedArrival" type="text" class="form-control" placeholder="8:30AM">
+						<input name="timetwo" id="estimatedArrival" type="text" class="form-control" placeholder="8:30AM" value="<?php echo $ride->timetwo?>">
 						<br/>
 					</div>
 				</div>
@@ -94,24 +91,100 @@
 					</div>
 				</div>
 				<div id="checkbox" ">
+				<?php
+               $ip =  $ride->days ; // some IP address
+               $iparr = explode("-", $ip);    
+               for ($i=0; $i < sizeof($iparr); $i++) { 
+               	if ($iparr[i]=="Monday") {
+               	?>
+					<div  class="checkbox">
+						<label><input name="pregunta[]"  type="checkbox" checked="checked" value="<?php $iparr[i]?>"></label>
+					</div>
+			    <?php	
+               } else {
+               	?>
 					<div  class="checkbox">
 						<label><input name="pregunta[]"  type="checkbox" value="Monday">Monday</label>
 					</div>
-					<div class="checkbox">
-						<label><input name="pregunta[]" type="checkbox" value="Tuesday">Tuesday</label>
+               	<?php
+               }
+               ?>
+               <?php
+               if ($iparr[i]=="Tuesday") {
+               	?>
+					<div  class="checkbox">
+						<label><input name="pregunta[]"  type="checkbox" checked="checked" value="<?php $iparr[i]?>"></label>
 					</div>
-					<div class="checkbox">
-						<label><input name="pregunta[]" type="checkbox" value="Wednesday">Wednesday</label>
+			    <?php	
+               } else {
+               	?>
+					<div  class="checkbox">
+						<label><input name="pregunta[]"  type="checkbox">Tuesday</label>
 					</div>
-					<div class="checkbox">
-						<label><input name="pregunta[]" type="checkbox" value="Thursday">Thursday</label>
+               	<?php
+               }
+               ?>
+               <?php
+               if ($iparr[i]=="Wednesday") {
+               	?>
+					<div  class="checkbox">
+						<label><input name="pregunta[]"  type="checkbox" checked="checked" value="<?php $iparr[i]?>"></label>
 					</div>
-					<div class="checkbox">
-						<label><input name="pregunta[]" type="checkbox" value="Friday">Friday</label>
+			    <?php	
+               } else {
+               	?>
+					<div  class="checkbox">
+						<label><input name="pregunta[]"  type="checkbox">Wednesday</label>
 					</div>
-					<div class="checkbox">
-						<label><input name="pregunta[]" type="checkbox" value="Saturday">Saturday</label>
+               	<?php
+               }
+               ?>
+               <?php
+               if ($iparr[i]=="Thursday") {
+               	?>
+					<div  class="checkbox">
+						<label><input name="pregunta[]"  type="checkbox" checked="checked" value="<?php $iparr[i]?>"></label>
 					</div>
+			    <?php	
+               } else {
+               	?>
+					<div  class="checkbox">
+						<label><input name="pregunta[]"  type="checkbox">Thursday</label>
+					</div>
+               	<?php
+               }
+                ?>
+                <?php
+                if ($iparr[i]=="Friday") {
+               	?>
+					<div  class="checkbox">
+						<label><input name="pregunta[]"  type="checkbox" checked="checked" value="<?php $iparr[i]?>"></label>
+					</div>
+			    <?php	
+               } else {
+               	?>
+					<div  class="checkbox">
+						<label><input name="pregunta[]"  type="checkbox">Friday</label>
+					</div>
+               	<?php
+               }
+                ?>
+                <?php
+                if ($iparr[i]=="Saturday") {
+               	?>
+					<div  class="checkbox">
+						<label><input name="pregunta[]"  type="checkbox" checked="checked" value="<?php $iparr[i]?>"></label>
+					</div>
+			    <?php	
+               } else {
+               	?>
+					<div  class="checkbox">
+						<label><input name="pregunta[]"  type="checkbox">Saturday</label>
+					</div>
+               	<?php
+               }
+               }
+                ?>
 				</div>
 				<div class="form-group">
                    <label for="exampleInputEmail1" id="mesage"><?php echo $error;?></label>
@@ -119,6 +192,7 @@
 				<button id="rides" type="submit" class="btn btn-success"  name="register">
                    Save
                 </button>
+                <?php endforeach; ?>
 			</form>
 		</div>
 	</div> 
