@@ -38,7 +38,7 @@
 				<div class="col-xs-12 col-md-12">
 				<?php foreach ($name as $user): ?>
 					<label id="bienvenido">Welcome: <?php echo $user->first_name?></label>
-					<?php endforeach; ?>
+					<?php endforeach; ?>					
 					<input id="img" type=image src="<?php echo base_url(); ?>assets/img/perfil.jpg">
 				</div>
 			</div>
@@ -97,10 +97,25 @@
 					</div>
 				</div>
 				<div id="checkbox" ">
-				<?php
-               $ip =  $ride->days ; // some IP address
-               $iparr = explode("-", $ip);
-                ?>
+					<div  class="checkbox">
+						<label><input name="pregunta[]"  type="checkbox" class="check">Monday</label>
+					</div>
+					<div class="checkbox">
+						<label><input name="pregunta[]" type="checkbox" class="check">Tuesday</label>
+					</div>
+					<div class="checkbox">
+						<label><input name="pregunta[]" type="checkbox" class="check">
+						Wednesday</label>
+					</div>
+					<div class="checkbox">
+						<label><input name="pregunta[]" type="checkbox" class="check" >Thursday</label>
+					</div>
+					<div class="checkbox">
+						<label><input name="pregunta[]" type="checkbox" class="check" >Friday</label>
+					</div>
+					<div class="checkbox">
+						<label><input name="pregunta[]" type="checkbox" class="check" >Saturday</label>
+					</div>
 				</div>
 				<div class="form-group">
                    <label for="exampleInputEmail1" id="mesage"><?php echo $error;?></label>
@@ -112,5 +127,8 @@
 			</form>
 		</div>
 	</div> 
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/principal.js"></script>
+    </script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8CHqwmIqI0RSiTVWt4S1q7WKAEAO8BQg&libraries=places&callback=initAutocompletethree" async defer></script> 
 </body>
 </html>

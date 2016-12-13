@@ -12,3 +12,7 @@
 	background-color: #cbe2f2;
 	border: none;
 }
+.juntar{
+	display: flex;
+	justify-content: flex-end;
+}

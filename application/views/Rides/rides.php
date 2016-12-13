@@ -127,6 +127,9 @@
                 </button>
 			</form>
 		</div>
-	</div> 
+	</div>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/principal.js"></script>
+    </script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8CHqwmIqI0RSiTVWt4S1q7WKAEAO8BQg&libraries=places&callback=initAutocompletetwo" async defer></script> 
 </body>
 </html>

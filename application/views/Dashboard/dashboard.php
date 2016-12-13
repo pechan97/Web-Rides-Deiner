@@ -80,7 +80,7 @@
             <td><?php echo $rides->name_ride?></td>
             <td><?php echo $rides->start?></td>
             <td><?php echo $rides->end?></td>
-            <td><a href="<?php echo base_url().'EditRides/show_rides/'.$rides->id?>">Edit</a> - <a href="<?php echo base_url().'EditRides/deleteride/'.$rides->id?>"  onclick= "return confirmDelete();">Delete</a></td>
+            <td><a  href="<?php echo base_url().'EditRides/show_rides/'.$rides->id?>" id="<?php echo $rides->days?>" class="daysquery">Edit</a> - <a href="<?php echo base_url().'EditRides/deleteride/'.$rides->id?>"  onclick= "return confirmDelete();">Delete</a></td>
             </tr>
             <?php endforeach; ?>
           </table>
@@ -89,6 +89,6 @@
       <a href="<?php echo base_url().'Rides/show_rides'?>" class="col-xs-1 col-md-1 btn btn-primary">+</a>
        </form>
     </div>
-  </div> 
+  </div>
 </body>
 </html>

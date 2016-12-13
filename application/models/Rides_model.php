@@ -27,6 +27,16 @@ class Rides_model extends CI_Model
       $this->db->where('id', $id);
       $this->db->delete('rides');
     }
+    /*public function mostrar($start,$end)
+    {
+       $query = $this->db->get_where('rides',array('start' =>$start,'end' => $end));
+       return $query->result();
+    }*/
+    public function mostrar($start,$end)
+    {
+      $query = $this->db->get_where('rides',array('start' =>$start,'end' => $end));
+       return $query->result();
+    }
 }
 
 ?>
