@@ -9,6 +9,11 @@
  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/boostrap.css">
 </head>
 <body>
+ <script type="text/javascript">
+    function confirmLogout() {
+        return confirm('Are you sure to logout?');
+    }
+</script>
 	<header>
 		<div class="menu_bar">
 			<a href="#" class="bt-menu"><span class="icon-list-numbered"></span>Menú</a>
@@ -18,6 +23,7 @@
 				<li><a href="<?php echo base_url().'Dashboard/show_dashboard'?>"><span class="icon-newspaper"></span>Dashboard</a></li>
 				<li><a href="<?php echo base_url().'Rides/show_rides'?>"><span class="icon-truck"></span>Rides</a></li>
 				<li><a href="<?php echo base_url().'Settings/show_settings'?>"><span class="icon-cogs"></span>Settings</a></li>
+				<li><a href="<?php echo base_url().'Login'?>" onclick= "return confirmLogout();"><span class="icon-cogs"></span>Logout</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -36,7 +42,7 @@
 					<input id="img" type=image src="<?php echo base_url(); ?>assets/img/perfil.jpg">
 				</div>
 			</div>
-			<form class="form-horizontal" action="<?php echo base_url().'Rides/registerRide'?>" method="post">
+			<form class="form-horizontal" action="<?php echo base_url().'EditRide/update_ride'?>" method="post">
 				<div class="form-group">
 					<label for="exampleInputFile" class="col-sm-2 control-label">Ride Name</label>
 					<div class="col-sm-6">
@@ -93,97 +99,7 @@
 				<div id="checkbox" ">
 				<?php
                $ip =  $ride->days ; // some IP address
-               $iparr = explode("-", $ip);    
-               for ($i=0; $i < sizeof($iparr); $i++) { 
-               	if ($iparr[i]=="Monday") {
-               	?>
-					<div  class="checkbox">
-						<label><input name="pregunta[]"  type="checkbox" checked="checked" value="<?php $iparr[i]?>"></label>
-					</div>
-			    <?php	
-               } else {
-               	?>
-					<div  class="checkbox">
-						<label><input name="pregunta[]"  type="checkbox" value="Monday">Monday</label>
-					</div>
-               	<?php
-               }
-               ?>
-               <?php
-               if ($iparr[i]=="Tuesday") {
-               	?>
-					<div  class="checkbox">
-						<label><input name="pregunta[]"  type="checkbox" checked="checked" value="<?php $iparr[i]?>"></label>
-					</div>
-			    <?php	
-               } else {
-               	?>
-					<div  class="checkbox">
-						<label><input name="pregunta[]"  type="checkbox">Tuesday</label>
-					</div>
-               	<?php
-               }
-               ?>
-               <?php
-               if ($iparr[i]=="Wednesday") {
-               	?>
-					<div  class="checkbox">
-						<label><input name="pregunta[]"  type="checkbox" checked="checked" value="<?php $iparr[i]?>"></label>
-					</div>
-			    <?php	
-               } else {
-               	?>
-					<div  class="checkbox">
-						<label><input name="pregunta[]"  type="checkbox">Wednesday</label>
-					</div>
-               	<?php
-               }
-               ?>
-               <?php
-               if ($iparr[i]=="Thursday") {
-               	?>
-					<div  class="checkbox">
-						<label><input name="pregunta[]"  type="checkbox" checked="checked" value="<?php $iparr[i]?>"></label>
-					</div>
-			    <?php	
-               } else {
-               	?>
-					<div  class="checkbox">
-						<label><input name="pregunta[]"  type="checkbox">Thursday</label>
-					</div>
-               	<?php
-               }
-                ?>
-                <?php
-                if ($iparr[i]=="Friday") {
-               	?>
-					<div  class="checkbox">
-						<label><input name="pregunta[]"  type="checkbox" checked="checked" value="<?php $iparr[i]?>"></label>
-					</div>
-			    <?php	
-               } else {
-               	?>
-					<div  class="checkbox">
-						<label><input name="pregunta[]"  type="checkbox">Friday</label>
-					</div>
-               	<?php
-               }
-                ?>
-                <?php
-                if ($iparr[i]=="Saturday") {
-               	?>
-					<div  class="checkbox">
-						<label><input name="pregunta[]"  type="checkbox" checked="checked" value="<?php $iparr[i]?>"></label>
-					</div>
-			    <?php	
-               } else {
-               	?>
-					<div  class="checkbox">
-						<label><input name="pregunta[]"  type="checkbox">Saturday</label>
-					</div>
-               	<?php
-               }
-               }
+               $iparr = explode("-", $ip);
                 ?>
 				</div>
 				<div class="form-group">

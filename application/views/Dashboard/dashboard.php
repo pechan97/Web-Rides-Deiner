@@ -15,6 +15,16 @@
            $user = $_SESSION['user'];
       }
        ?>
+       <script type="text/javascript">
+    function confirmDelete() {
+        return confirm('Are you sure you want to delete this ride?');
+    }
+</script>
+  <script type="text/javascript">
+    function confirmLogout() {
+        return confirm('Are you sure to logout?');
+    }
+</script>
   <header>
     <div class="menu_bar">
       <a href="#" class="bt-menu"><span class="icon-list-numbered"></span>Menú</a>
@@ -24,6 +34,7 @@
         <li><a href="<?php echo base_url().'Dashboard/show_dashboard'?>"><span class="icon-newspaper"></span>Dashboard</a></li>
         <li><a href="<?php echo base_url().'Rides/show_rides'?>"><span class="icon-truck"></span>Rides</a></li>
         <li><a href="<?php echo base_url().'Settings/show_settings'?>"><span class="icon-cogs"></span>Settings</a></li>
+        <li><a href="<?php echo base_url().'Login'?>" onclick= "return confirmLogout();"><span class="icon-cogs"></span>Logout</a></li>
       </ul>
     </nav>
   </header>
@@ -69,7 +80,7 @@
             <td><?php echo $rides->name_ride?></td>
             <td><?php echo $rides->start?></td>
             <td><?php echo $rides->end?></td>
-            <td><a href="<?php echo base_url().'EditRides/show_rides/'.$rides->id?>">Edit</a> - <a href="">Delete</a></td>
+            <td><a href="<?php echo base_url().'EditRides/show_rides/'.$rides->id?>">Edit</a> - <a href="<?php echo base_url().'EditRides/deleteride/'.$rides->id?>"  onclick= "return confirmDelete();">Delete</a></td>
             </tr>
             <?php endforeach; ?>
           </table>
