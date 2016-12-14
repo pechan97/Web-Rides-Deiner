@@ -19,3 +19,11 @@
 #trans{
 visibility: hidden
 }
+#start{
+	background-color: white;
+	color: black;
+}
+#end{
+background-color: white;
+	color: black;	
+}

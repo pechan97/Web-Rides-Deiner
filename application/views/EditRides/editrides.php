@@ -97,24 +97,23 @@
 					</div>
 				</div>
 				<div id="checkbox" ">
-					<div  class="checkbox">
-						<label><input name="pregunta[]"  type="checkbox" class="check">Monday</label>
+				<div  class="checkbox">
+						<label><input name="pregunta[]"  type="checkbox" class="check" value="Monday">Monday</label>
+					    </div>
+					<div class="checkbox">
+						<label><input name="pregunta[]" type="checkbox" class="check" value="Tuesday">Tuesday</label>
 					</div>
 					<div class="checkbox">
-						<label><input name="pregunta[]" type="checkbox" class="check">Tuesday</label>
+						<label><input name="pregunta[]" type="checkbox" class="check" value="Wednesday">Wednesday</label>
 					</div>
 					<div class="checkbox">
-						<label><input name="pregunta[]" type="checkbox" class="check">
-						Wednesday</label>
+						<label><input name="pregunta[]" type="checkbox" class="check" value="Thursday" >Thursday</label>
 					</div>
 					<div class="checkbox">
-						<label><input name="pregunta[]" type="checkbox" class="check" >Thursday</label>
+						<label><input name="pregunta[]" type="checkbox" class="check" value="Friday" >Friday</label>
 					</div>
 					<div class="checkbox">
-						<label><input name="pregunta[]" type="checkbox" class="check" >Friday</label>
-					</div>
-					<div class="checkbox">
-						<label><input name="pregunta[]" type="checkbox" class="check" >Saturday</label>
+						<label><input name="pregunta[]" type="checkbox" class="check" value="Saturday">Saturday</label>
 					</div>
 				</div>
 				<div class="form-group">

@@ -34,7 +34,11 @@ class EditRides extends CI_Controller
         if(!empty($_POST['pregunta'])){
           foreach($_POST['pregunta'] as $selected){
           $savedays.=$selected."-";
-          }       
+          }
+          } else {
+          $this->session->set_flashdata('error', 'Please choose the days');
+          redirect('EditRides/show_rides');
+          }
           if ($this->form_validation->run()) {
               $data = array(
                          'name_ride' => $this->input->post('ridename'),
@@ -53,11 +57,6 @@ class EditRides extends CI_Controller
           $this->session->set_flashdata('error', 'All Fields are required');
           redirect('EditRides/show_rides');
         }
-        } else {
-          $this->session->set_flashdata('error', 'Please choose the days');
-          redirect('EditRides/show_rides');
-        }
-        
     }
     public function deleteride()
     {
